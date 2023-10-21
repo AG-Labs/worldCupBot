@@ -5,6 +5,9 @@
 node_modules
 .env
 
+# actual files with ids 
+./lib/Lambda/maps/teams.js
+
 # CDK asset staging directory
 .cdk.staging
 cdk.out
