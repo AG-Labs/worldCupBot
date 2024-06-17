@@ -15,11 +15,16 @@ import {
 import * as path from "path";
 import { Duration } from "aws-cdk-lib";
 import { SqsEventSource } from "aws-cdk-lib/aws-lambda-event-sources";
+import "dotenv/config";
+const { apiKey, slackWebhookUrl } = process.env;
 
 export class WorldCupStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    if (!apiKey || !slackWebhookUrl) {
+      throw new Error("Missing environment variables");
+    }
     // The code that defines your stack goes here
 
     // example resource
@@ -63,8 +68,8 @@ export class WorldCupStack extends cdk.Stack {
       role: lambdaRole,
       environment: {
         sqsQueue: queue.queueUrl,
-        apiKey: "",
-        slackWebhookUrl: "",
+        apiKey: apiKey,
+        slackWebhookUrl: slackWebhookUrl,
       },
       timeout: Duration.seconds(20),
     });
@@ -83,7 +88,7 @@ export class WorldCupStack extends cdk.Stack {
         minute: "0",
         hour: "16,13,19",
         day: "14,15,16,17,18,19,20,21,22,23,24,25,26",
-        month: "06,",
+        month: "06",
       }),
       targets: [new eventTargets.LambdaFunction(fn)],
     });
