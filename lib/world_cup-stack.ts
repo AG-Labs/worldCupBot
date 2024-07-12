@@ -88,7 +88,7 @@ export class WorldCupStack extends cdk.Stack {
       schedule: Schedule.cron({
         minute: "0",
         hour: "16,13,19",
-        day: "14,15,16,17,18,19,20,21,22,23,24,25,26,30,01,02,05,06,09,10",
+        day: "14,15,16,17,18,19,20,21,22,23,24,25,26,30,01,02,05,06,09,10,14",
         month: "06,07",
       }),
       targets: [new eventTargets.LambdaFunction(fn)],
