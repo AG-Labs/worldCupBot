@@ -1,0 +1,17 @@
+{
+  "message": {
+    "Records": [
+      {
+        "body": {
+          "gameId": 1145510,
+          "personA": "U0768CB3S72",
+          "personB": "U011RJDBV60",
+          "teamA": "Hungary",
+          "teamB": "Switzerland",
+          "delay": "delay1",
+          "type": "mid"
+        }
+      }
+    ]
+  }
+}
