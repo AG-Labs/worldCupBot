@@ -9,7 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "deploy": "cdk deploy WorldCupStack --require-approval never"
+    "deploy": "cdk deploy WorldCupStack --require-approval never",
+    "knip": "knip --config ./knip.json"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
