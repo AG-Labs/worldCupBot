@@ -62,7 +62,7 @@ export class WorldCupStack extends cdk.Stack {
     lambdaRole.addToPolicy;
 
     const fn = new Function(this, "function", {
-      runtime: Runtime.NODEJS_16_X,
+      runtime: Runtime.NODEJS_24_X,
       handler: "handler.index",
       code: Code.fromAsset(path.join(__dirname, "Lambda")),
       role: lambdaRole,

@@ -2,10 +2,8 @@
   "name": "world_cup",
   "version": "0.1.0",
   "scripts": {},
-  "dependencies": {
-    "axios": "^1.12.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "aws-sdk": "^2.1692.0"
+    "@aws-sdk/client-sqs": "^3.709.0"
   }
 }
