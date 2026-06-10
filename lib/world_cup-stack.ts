@@ -33,7 +33,7 @@ export class WorldCupStack extends cdk.Stack {
     const lambdaRole = new Role(this, "lambdaRole", {
       assumedBy: new CompositePrincipal(
         new ServicePrincipal("lambda.amazonaws.com"),
-        new ServicePrincipal("events.amazonaws.com")
+        new ServicePrincipal("events.amazonaws.com"),
       ),
       description: "Example role...",
       managedPolicies: [
@@ -86,10 +86,10 @@ export class WorldCupStack extends cdk.Stack {
       ruleName: `game-cron`,
       //would be good to read this in from th schedules json in the lambda
       schedule: Schedule.cron({
-        minute: "0",
-        hour: "16,13,19",
-        day: "14,15,16,17,18,19,20,21,22,23,24,25,26,30,01,02,05,06,09,10,14",
-        month: "06,07",
+        minute: "0,30",
+        hour: "0,1,2,3,4,16,17,19,20,21,22,23",
+        day: "11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28",
+        month: "06",
       }),
       targets: [new eventTargets.LambdaFunction(fn)],
     });

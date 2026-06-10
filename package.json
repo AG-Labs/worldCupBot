@@ -10,7 +10,10 @@
     "test": "jest",
     "cdk": "cdk",
     "deploy": "cdk deploy WorldCupStack --require-approval never",
-    "knip": "knip --config ./knip.json"
+    "knip": "knip --config ./knip.json",
+    "fixtures-to-schedules": "node scripts/fixtures-to-schedules.cjs",
+    "teams-to-map": "node scripts/teams-to-map.cjs",
+    "schedules-to-cron": "node scripts/schedules-to-cron.cjs"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
