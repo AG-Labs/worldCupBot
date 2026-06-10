@@ -11,3 +11,5 @@ lib/Lambda/maps/teams.js
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+outputs/
