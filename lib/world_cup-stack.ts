@@ -16,13 +16,13 @@ import * as path from "path";
 import { Duration } from "aws-cdk-lib";
 import { SqsEventSource } from "aws-cdk-lib/aws-lambda-event-sources";
 import "dotenv/config";
-const { apiKey, slackWebhookUrl } = process.env;
+const { apiKey, slackWebhookUrl, channel } = process.env;
 
 export class WorldCupStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    if (!apiKey || !slackWebhookUrl) {
+    if (!apiKey || !slackWebhookUrl || !channel) {
       throw new Error("Missing environment variables");
     }
     // The code that defines your stack goes here
@@ -70,6 +70,7 @@ export class WorldCupStack extends cdk.Stack {
         sqsQueue: queue.queueUrl,
         apiKey: apiKey,
         slackWebhookUrl: slackWebhookUrl,
+        channel: channel,
       },
       timeout: Duration.seconds(20),
     });
