@@ -10,6 +10,7 @@
     "test": "jest",
     "cdk": "cdk",
     "deploy": "cdk deploy WorldCupStack --require-approval never",
+    "destroy": "cdk destroy WorldCupStack",
     "knip": "knip --config ./knip.json",
     "fixtures-to-schedules": "node scripts/fixtures-to-schedules.cjs",
     "teams-to-map": "node scripts/teams-to-map.cjs",
